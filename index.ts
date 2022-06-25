@@ -3,15 +3,30 @@
 import './util/extensJS';
 import { raeExist } from './lib/rae';
 import { generateCombinations } from './lib/words';
+import { Console } from 'console';
 
-console.time('time exec');
 console.log();
 
 const userArgs = process.argv.slice(2),
+  needHelp = userArgs.includes('--help'),
   runOffline = userArgs.includes('--offline'),
   arg1Regex = /^[a-z]{3,10}$/i,
   arg2Regex = /^([a-z_]{3,10}|([3-9]|10))$/i;
 let [letters, avance] = userArgs;
+
+if (!userArgs.length || needHelp) {
+  console.log(
+    'Wordfinder\n\n' +
+      'Uso: wfind <letras> <avance|longitud> [opciones]\n\n' +
+      'Ejemplo: wfind smtiada 7\n' +
+      '         wfind mtadisa am__t__\n\n' +
+      'Opciones:\n' +
+      '--help         Muestra este mensaje\n' +
+      '--offline      Ejecuta el scritpt sin filtrar los resultados\n'
+  );
+
+  process.exit();
+}
 
 if (!letters || !avance) {
   console.log('se requeren dos argumentos\n');
@@ -26,6 +41,8 @@ if (!arg1Regex.test(letters) || !arg2Regex.test(avance)) {
   );
   process.exit();
 }
+
+console.time('time exec');
 
 letters = letters.toUpperCase();
 avance = avance.toUpperCase();

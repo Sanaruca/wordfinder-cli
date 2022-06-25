@@ -2,11 +2,13 @@
   "name": "wordfinder-cli",
   "author": "sanaruca",
   "version": "1.0.0",
+  "license": "MIT",
   "bin": {
     "wfind": "./bin/index.js"
   },
   "scripts": {
-    "build": "tsc --project ./tsconfig.json"
+    "build": "tsc --project ./tsconfig.json",
+    "install-globally": "npm run build && npm i -g"
   },
   "dependencies": {
     "rae-api": "1.5.0"
