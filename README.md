@@ -16,7 +16,7 @@ Wordfinder es una herramienta capaz de encontrar palabras que siguen un formato 
 Clone el repositorio, posiciónese en el directorio clonado y ejecute `npm run install-globally`:
 
 ```
-$ git clone https://github.com/Sanaruca/wordfinder-cli.git
+$ git clone https://github.com/sanaruca/wordfinder-cli.git
 $ cd wordfinder-cli
 $ npm run install-globally
 ```

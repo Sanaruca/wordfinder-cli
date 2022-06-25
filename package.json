@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc --project ./tsconfig.json",
-    "install-globally": "npm run build && npm i -g"
+    "install-globally": "npm i && npm run build && npm i -g"
   },
   "dependencies": {
     "rae-api": "1.5.0"
